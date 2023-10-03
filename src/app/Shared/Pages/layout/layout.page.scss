@@ -1,0 +1,45 @@
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+#Layout {
+  @extend .container-fluid;
+  height: 100vh;
+}
+
+#Layout .Content {
+  @extend .row;
+  @extend .h-100;
+}
+
+#Layout .Content .Content__Side {
+  width: 15%;
+  @extend .d-none;
+  @extend .d-md-block;
+  background-color: aquamarine;
+}
+
+
+#Layout .Content .Content__Data {
+  width: 85%;
+
+}
+
+:host ::ng-deep.Collapsep{
+  position: relative;
+  display: flex;
+  width: 100%;
+  border: 0;
+  border-radius: 0;    
+}
+
+:host ::ng-deep.Collapsep::after {
+
+  transition: transform 0.2s ease-in-out;
+  content: "";
+  background-size: 35px;
+  width: 40px;
+  height: 45px;
+  position: absolute;
+  right: -1.75rem;
+  top: 0;
+
+}
