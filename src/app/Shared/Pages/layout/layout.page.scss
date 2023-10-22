@@ -1,4 +1,4 @@
-@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../../styles.scss";
 
 #Layout {
   @extend .container-fluid;
@@ -14,7 +14,8 @@
   width: 15%;
   @extend .d-none;
   @extend .d-md-block;
-  background-color: aquamarine;
+  background: rgb(2,0,36);
+  background: linear-gradient(175deg, rgba(2,0,36,1) 0%, rgba(121,95,9,1) 100%, rgba(255,205,0,1) 100%);
 }
 
 

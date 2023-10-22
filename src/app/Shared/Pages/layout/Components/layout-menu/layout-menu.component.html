@@ -1,0 +1,8 @@
+<ul class="nav nav-pills flex-column mb-2 mt-4">
+    <div *ngFor="let menuItem of ListItemMenu ">
+     <app-layout-menu-item
+        [MenuItem]="menuItem"
+     >
+     </app-layout-menu-item>
+    </div>
+  </ul>
