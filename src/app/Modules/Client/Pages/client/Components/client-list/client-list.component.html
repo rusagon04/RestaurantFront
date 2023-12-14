@@ -1,0 +1,17 @@
+<div *ngFor="let client of Clients">
+    <div class="card shadow mt-2 hover-card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-10 Info" (click)="ClickClient(client)">
+                    <h5 class="fw-bold">{{client.name}} {{client.lastName}}</h5>
+                    <h6 class="fst-italic">{{client.typeDocument}}-{{client.document}}</h6>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <button type="button " class="border-0 bg-transparent" (click)="DeleteClient(client.codclient)">
+                        <fa-icon class="text-danger" size="lg" [icon]="Icon"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

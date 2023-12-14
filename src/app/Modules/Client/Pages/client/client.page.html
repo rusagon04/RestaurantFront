@@ -1,1 +1,19 @@
-<p>client works!</p>
+<div class="row mt-4 pt-5 mx-3">
+    <div class="col-3">
+        <app-client-list
+          [Clients]="Clients"
+          (SelectClient)="SelectCLient($event)"
+          (DeleteClient)="DeleteClient($event)"
+        >
+        </app-client-list>
+    </div>
+    <div class="col">     
+        <app-current-client
+          [Client]="CLient"
+          (Cancel)="New()"
+          (SaveClient)="SaveClient($event)"
+          (UpdateClient)="UpdateClient($event)"
+        >
+        </app-current-client>   
+    </div>
+</div>
