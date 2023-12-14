@@ -1,0 +1,54 @@
+<form [formGroup]="form">
+    <div class="row mt-2">
+        <div class="col">
+            <div class="form-floating mb-3 ">
+                <input class="form-control shadow bg-body rounded" placeholder="Nombre" formControlName="name">
+                <label for="floatingInput">Nombre</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input class="form-control shadow bg-body rounded" placeholder="Apellido" formControlName="lastName">
+                <label for="floatingInput">Apellido</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-2 form-floating">
+            <select class="form-select shadow bg-body rounded" id="floatingSelect" aria-label="Tipo de Documento" formControlName="typeDocument">
+                <option value="CI" selected>CI</option>
+                <option value="E">E</option>
+                <option value="P">P</option>
+                <option value="RIF">RIF</option>
+              </select>
+              <label class="ms-2">Tipo de Documento</label>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3">
+                <input class="form-control shadow bg-body rounded" placeholder="Documento" formControlName="document">
+                <label for="floatingInput">Documento</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input class="form-control shadow bg-body rounded" placeholder="Contacto" formControlName="contact">
+                <label for="floatingInput">Contacto</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating">
+                <textarea class="form-control shadow bg-body rounded" placeholder="Dirección" id="floatingTextarea2" formControlName="address"></textarea>
+                <label >Dirección</label>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-danger me-3" (click)="Cancel()">Cancelar</button>
+            <button *ngIf="Client.codclient === ''" type="button" class="btn btn-warning" (click)="SaveClient()">Guardar</button>
+            <button *ngIf="Client.codclient != ''" type="button" class="btn btn-warning" (click)="UpdateClient()">Modificar</button>
+        </div>
+    </div>
+</form>
