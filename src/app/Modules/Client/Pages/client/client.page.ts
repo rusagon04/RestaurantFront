@@ -3,6 +3,9 @@ import { ClientDto, MapDtoToClientPostRequest, MapDtoToClientPutRequest } from '
 import { ClientRequestPost, ClientRequestPut } from 'src/app/Core/Microservices/Restaurant/Models/Client/client.request';
 import { ClientResponse } from 'src/app/Core/Microservices/Restaurant/Models/Client/client.response';
 import { ClientService } from 'src/app/Core/Microservices/Restaurant/Services/Client/client.service';
+import { ConfirmMessageService } from 'src/app/Dialogs/confirm-message/confirm-message.service';
+import { ErrorMessageService } from 'src/app/Dialogs/error-message/error-message.service';
+import { MessageService } from 'src/app/Dialogs/menssage/message.service';
 
 @Component({
   selector: 'app-client',
@@ -23,7 +26,10 @@ export class ClientPage implements OnInit{
   }
   
   constructor(
-    private clientService: ClientService
+    private clientService: ClientService,
+    private messageService: MessageService,
+    private confirmMessageService: ConfirmMessageService,
+    private errorMessageService: ErrorMessageService
   ){}
   
   ngOnInit(): void {
@@ -38,18 +44,18 @@ export class ClientPage implements OnInit{
       
       switch(result){
         case"N":
-          alert(message);
+          this.messageService.openDialog(message);
           break;
         case"S":
           this._CLients = data;
           break;
         default:
-          alert(message);
+          this.messageService.openDialog(message);
           break;
       }
 
     }catch(error){
-      alert(error);
+      this.errorMessageService.openDialog(error);
     }
   }
 
@@ -63,19 +69,19 @@ export class ClientPage implements OnInit{
 
       switch(result){
         case"N":
-          alert(message);
+          this.messageService.openDialog(message);
           break;
         case"S":
-          alert(message);
+          this.confirmMessageService.openDialog("Cliente registrado con exito");
           this.SearchClient();
           break;
         default:
-          alert(message);
+          this.messageService.openDialog(message);
           break
       }
 
     }catch(error){
-      alert(error);
+      this.errorMessageService.openDialog(error);
     }
   }
 
@@ -89,19 +95,19 @@ export class ClientPage implements OnInit{
 
       switch(result){
         case"N":
-          alert(message);
+          this.messageService.openDialog(message);
           break;
         case"S":
-          alert(message);
+          this.confirmMessageService.openDialog("Cliente modificado con exito");
           this.SearchClient();
           break;
         default:
-          alert(message);
+          this.messageService.openDialog(message);
           break
       }
 
     }catch(error){
-      alert(error);
+      this.errorMessageService.openDialog(error);
     }
   }
 
@@ -113,10 +119,10 @@ export class ClientPage implements OnInit{
       
       switch(result){
         case"N":
-          alert(message);
+          this.messageService.openDialog(message);
           break;
         case"S":
-          alert(message);
+          this.confirmMessageService.openDialog("Cliente eliminado con exito");
           this.SearchClient();
           
           if(codclient === this._CLient.codclient){
@@ -125,12 +131,12 @@ export class ClientPage implements OnInit{
 
           break;
         default:
-          alert(message);
+          this.messageService.openDialog(message);
           break
       }
 
     }catch(error){
-      alert(error);
+      this.errorMessageService.openDialog(error);
     }
   }
 
