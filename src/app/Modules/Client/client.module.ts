@@ -6,6 +6,7 @@ import { ClientListComponent } from './Pages/client/Components/client-list/clien
 import { CurrentClientComponent } from './Pages/client/Components/current-client/current-client.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     ClientRoutingModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDialogModule
   ]
 })
 export class ClientModule { }

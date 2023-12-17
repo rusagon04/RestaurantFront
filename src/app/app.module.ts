@@ -6,6 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './Core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DialogsModule } from './Dialogs/dialogs.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +17,10 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     FontAwesomeModule,
     NgHttpLoaderModule.forRoot(),
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule,
+    DialogsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
