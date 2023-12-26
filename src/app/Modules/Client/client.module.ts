@@ -7,6 +7,7 @@ import { CurrentClientComponent } from './Pages/client/Components/current-client
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ClientRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    MatDialogModule
+    MatDialogModule,
+    SharedModule
   ]
 })
 export class ClientModule { }

@@ -6,12 +6,14 @@ import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { LayoutMenuComponent } from './Pages/layout/Components/layout-menu/layout-menu.component';
 import { LayoutMenuItemComponent } from './Pages/layout/Components/layout-menu-item/layout-menu-item.component';
+import { InputComponent } from './Components/input/input.component';
 
 @NgModule({
     declarations: [
       LayoutPage,
       LayoutMenuComponent,
-      LayoutMenuItemComponent
+      LayoutMenuItemComponent,
+      InputComponent
     ],
     imports: [
       CommonModule, 
@@ -19,7 +21,9 @@ import { LayoutMenuItemComponent } from './Pages/layout/Components/layout-menu-i
       ReactiveFormsModule,
       FontAwesomeModule
     ],
-    exports: []
+    exports: [
+      InputComponent
+    ]
   })
   export class SharedModule { }
   

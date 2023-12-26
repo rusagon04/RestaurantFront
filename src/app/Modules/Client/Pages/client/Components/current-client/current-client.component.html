@@ -1,16 +1,10 @@
 <form [formGroup]="form">
     <div class="row mt-2">
         <div class="col">
-            <div class="form-floating mb-3 ">
-                <input class="form-control shadow bg-body rounded" placeholder="Nombre" formControlName="name">
-                <label for="floatingInput">Nombre</label>
-            </div>
+            <app-input PlaceHolder="Nombre" Label="Nombre" formControlName="name"></app-input>
         </div>
         <div class="col">
-            <div class="form-floating mb-3">
-                <input class="form-control shadow bg-body rounded" placeholder="Apellido" formControlName="lastName">
-                <label for="floatingInput">Apellido</label>
-            </div>
+            <app-input PlaceHolder="Apellido" Label="Apellido" formControlName="lastName"></app-input>
         </div>
     </div>
     <div class="row mt-2">
@@ -24,24 +18,15 @@
               <label class="ms-2">Tipo de Documento</label>
         </div>
         <div class="col-4">
-            <div class="form-floating mb-3">
-                <input class="form-control shadow bg-body rounded" placeholder="Documento" formControlName="document">
-                <label for="floatingInput">Documento</label>
-            </div>
+            <app-input PlaceHolder="Documento" Label="Documento" formControlName="document"></app-input>
         </div>
         <div class="col">
-            <div class="form-floating mb-3">
-                <input class="form-control shadow bg-body rounded" placeholder="Contacto" formControlName="contact">
-                <label for="floatingInput">Contacto</label>
-            </div>
+            <app-input PlaceHolder="Contacto" Label="Contacto" formControlName="contact"></app-input>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <div class="form-floating">
-                <textarea class="form-control shadow bg-body rounded" placeholder="Dirección" id="floatingTextarea2" formControlName="address"></textarea>
-                <label >Dirección</label>
-            </div>
+            <app-input PlaceHolder="Dirección" Label="Dirección" formControlName="address"></app-input>
         </div>
     </div>
     <div class="row ">
