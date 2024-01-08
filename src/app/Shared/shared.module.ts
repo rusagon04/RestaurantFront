@@ -7,13 +7,17 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { LayoutMenuComponent } from './Pages/layout/Components/layout-menu/layout-menu.component';
 import { LayoutMenuItemComponent } from './Pages/layout/Components/layout-menu-item/layout-menu-item.component';
 import { InputComponent } from './Components/input/input.component';
+import { ConfirmButtonComponent } from './Components/confirm-button/confirm-button.component';
+import { CancelButtonComponent } from './Components/cancel-button/cancel-button.component';
 
 @NgModule({
     declarations: [
       LayoutPage,
       LayoutMenuComponent,
       LayoutMenuItemComponent,
-      InputComponent
+      InputComponent,
+      ConfirmButtonComponent,
+      CancelButtonComponent
     ],
     imports: [
       CommonModule, 
@@ -22,7 +26,9 @@ import { InputComponent } from './Components/input/input.component';
       FontAwesomeModule
     ],
     exports: [
-      InputComponent
+      InputComponent,
+      ConfirmButtonComponent,
+      CancelButtonComponent
     ]
   })
   export class SharedModule { }
