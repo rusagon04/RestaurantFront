@@ -31,9 +31,9 @@
     </div>
     <div class="row ">
         <div class="col d-flex justify-content-end mt-4">
-            <button type="button" class="btn btn-danger me-3" (click)="Cancel()">Cancelar</button>
-            <button *ngIf="Client.codclient === ''" type="button" class="btn btn-warning" (click)="SaveClient()">Guardar</button>
-            <button *ngIf="Client.codclient != ''" type="button" class="btn btn-warning" (click)="UpdateClient()">Modificar</button>
+            <app-cancel-button LabelButton="Cancelar" (Click)="Cancel()"></app-cancel-button>
+            <app-confirm-button *ngIf="Client.codclient === ''" LabelButton="Guardar" (Click)="SaveClient()"></app-confirm-button>
+            <app-confirm-button *ngIf="Client.codclient != ''" LabelButton="Modificar" (Click)="UpdateClient()"></app-confirm-button>
         </div>
     </div>
 </form>
