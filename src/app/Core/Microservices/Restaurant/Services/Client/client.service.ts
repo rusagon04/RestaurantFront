@@ -3,21 +3,29 @@ import { Injectable } from '@angular/core';
 import { ClientResponse } from "../../Models/Client/client.response";
 import { firstValueFrom } from "rxjs";
 import { ClientRequestPost, ClientRequestPut } from "../../Models/Client/client.request";
+import { BaseUrl } from "src/app/Core/Utils/base-url";
+import { Microservice } from "src/app/Core/Utils/microservice";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  constructor(private Http: HttpClient) { }
+  private _BaseUrl: string = "";
+  private _Microservice: string = Microservice.Restaurant;
+  private _Endpoint: string = "Client"
+
+  constructor(private Http: HttpClient) { 
+    this._BaseUrl = BaseUrl(this._Microservice);
+  }
 
   Get() {
-    const url: string = `http://localhost/RestaurantApi/api/Client`;
+    const url: string = `${this._BaseUrl}${this._Endpoint}`;
     return firstValueFrom(this.Http.get<ClientResponse>(url));
   }
 
   Post(clientRequestPost: ClientRequestPost) {
-    const url: string = `http://localhost/RestaurantApi/api/Client`;
+    const url: string = `${this._BaseUrl}${this._Endpoint}`;
     const httpOptions = {
       headers: new HttpHeaders({
         "content-type": "application/json",
@@ -27,7 +35,7 @@ export class ClientService {
   }
 
   Put(codclient: string, clientRequestPut: ClientRequestPut) {
-    const url: string = `http://localhost/RestaurantApi/api/Client/${codclient}`;
+    const url: string = `${this._BaseUrl}${this._Endpoint}/${codclient}`;
     const httpOptions = {
       headers: new HttpHeaders({
         "content-type": "application/json",
@@ -37,7 +45,7 @@ export class ClientService {
   }
 
   Delete(codclient: string){
-    const url: string = `http://localhost/RestaurantApi/api/Client/${codclient}`;
+    const url: string = `${this._BaseUrl}${this._Endpoint}/${codclient}`;
     const httpOptions = {
       headers: new HttpHeaders({
         "content-type": "application/json",
