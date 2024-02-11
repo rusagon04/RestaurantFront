@@ -4,10 +4,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './Core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DialogsModule } from './Dialogs/dialogs.module';
+import { AuthInterceptor } from './Core/Services/Session/auth-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,13 @@ import { DialogsModule } from './Dialogs/dialogs.module';
     DialogsModule
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
