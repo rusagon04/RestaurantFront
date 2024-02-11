@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <div class="Login">
+        <div class="Login__Container">
+            <div>
+                <div>
+                    <app-input PlaceHolder="Usuario" Label="Usuario" formControlName="user"></app-input>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <app-input PlaceHolder="Contrasena" Label="Contrasena" formControlName="password"></app-input>
+                </div>
+            </div>
+            <div class="mt-4 d-flex justify-content-center">
+                <button (click)="Sigin()">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</form>
