@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+    <div class="row">
+        <div class="Login__Title">
+            <h1 class="Login__Title--Text">LOGIN</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-input PlaceHolder="Usuario" Label="Usuario" formControlName="user"></app-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-input Type="password" PlaceHolder="Contraseña" Label="Contraseña"
+                formControlName="password"></app-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="Login__Button">
+            <button type="button" class="Login__Button--Login" (click)="Sigin()">LOGIN</button>
+        </div>
+    </div>
+    <div class="row d-flex">
+        <div class="Login__Recover">
+            <a href="#" class="Login__Recover--Text">Recuperar contraseña</a>
+        </div>
+    </div>
+</form>

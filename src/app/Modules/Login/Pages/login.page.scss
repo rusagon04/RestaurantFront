@@ -1,0 +1,18 @@
+@import "./../../../../styles.scss";
+
+.Login {
+    @extend .d-flex, .align-items-center, .justify-content-center;
+    background: rgb(58, 151, 229);
+    height: 100vh;  
+}
+
+.Login .Login__Container {
+    @extend .container, .rounded-3;
+    width: 90%; 
+    max-width: 60rem; 
+}
+
+.Login .Login__Container .Login__Container--Current{
+    @extend .row, .d-flex, .justify-content-center, .align-items-center;
+    height: 100%; 
+}

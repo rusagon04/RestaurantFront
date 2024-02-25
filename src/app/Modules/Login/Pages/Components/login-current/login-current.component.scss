@@ -1,17 +1,17 @@
-@import "../../../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./../../../../../../styles.scss";
 
-.Login {
-    @extend .vh-100;
-    @extend .container-fluid;
-    @extend .d-flex;
-    @extend .flex-column;
-    @extend .align-items-center;
-    @extend .justify-content-center;
+.Card{
+    @extend .card, .bg-transparent, .border, .border-0, .shadow-lg;
+}
 
-    &__Container{
-        background: rgba(white, 0.25);
-        width: 25rem;
-        padding: 4rem 3rem;
-        @extend .rounded-3;
-    }
+.Card .Card__Content{
+    @extend .row, .g-0;
+}
+
+.Card .Card__Content .Card__Content--Left{
+    @extend .col-12, .col-md-5, .bg-danger, .d-flex, .justify-content-center, .align-items-center, .rounded-start;
+}
+
+.Card .Card__Content .Card__Content--Right{
+   @extend .col-12, .col-md-7, .bg-white, .rounded-end;
 }
