@@ -1,19 +1,12 @@
-<form [formGroup]="form">
-    <div class="Login">
-        <div class="Login__Container">
-            <div>
-                <div>
-                    <app-input PlaceHolder="Usuario" Label="Usuario" formControlName="user"></app-input>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <app-input PlaceHolder="Contrasena" Label="Contrasena" formControlName="password"></app-input>
-                </div>
-            </div>
-            <div class="mt-4 d-flex justify-content-center">
-                <button (click)="Sigin()">Ingresar</button>
+<div class="Card">
+    <div class="Card__Content">
+        <div class="Card__Content--Left">
+            <h2 class="text-white">Welcome</h2>
+        </div>
+        <div class="Card__Content--Right">
+            <div class="card-body">
+                <app-login-current-form (Sigin)="Sigin($event)"></app-login-current-form>
             </div>
         </div>
     </div>
-</form>
+</div>

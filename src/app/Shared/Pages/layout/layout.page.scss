@@ -14,8 +14,7 @@
   width: 15%;
   @extend .d-none;
   @extend .d-md-block;
-  background: rgb(2,0,36);
-  background: linear-gradient(175deg, rgba(2,0,36,1) 0%, rgba(121,95,9,1) 100%, rgba(255,205,0,1) 100%);
+  background: rgb(58, 151, 229);
 }
 
 
@@ -23,24 +22,3 @@
   width: 85%;
 
 }
-
-// :host ::ng-deep.Collapsep{
-//   position: relative;
-//   display: flex;
-//   width: 100%;
-//   border: 0;
-//   border-radius: 0;    
-// }
-
-// :host ::ng-deep.Collapsep::after {
-
-//   transition: transform 0.2s ease-in-out;
-//   content: "";
-//   background-size: 35px;
-//   width: 40px;
-//   height: 45px;
-//   position: absolute;
-//   right: -1.75rem;
-//   top: 0;
-
-// }

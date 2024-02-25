@@ -18,6 +18,7 @@ export class InputComponent implements OnInit, ControlValueAccessor{
   _ClassInput: string = "form-control shadow bg-body rounded";
   _PlaceHolder: string = "";
   _Label: string = "";
+  _Type: string = "text";
   _CurrentValue: string | number = "";
   
   onChange = (_: any) => { };
@@ -37,6 +38,11 @@ export class InputComponent implements OnInit, ControlValueAccessor{
   set Label(label: string){
     this._Label = label ? label : "";
   }
+
+  @Input("Type")
+  set Type(type: string){
+    this._Type = type ? type : "text";
+  }
   
   get ClassInput(){
     return this._ClassInput;
@@ -48,6 +54,10 @@ export class InputComponent implements OnInit, ControlValueAccessor{
 
   get Label(){
     return this._Label;
+  }
+
+  get Type(){
+    return this._Type;
   }
 
   get CurrentValue(){

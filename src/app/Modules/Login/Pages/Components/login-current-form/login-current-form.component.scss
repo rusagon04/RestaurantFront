@@ -1,0 +1,31 @@
+@import "./../../../../../../styles.scss";
+
+.Login__Title{
+    @extend .col-12, .d-flex, .justify-content-center;
+}
+
+.Login__Title .Login__Title--Text{
+    @extend .fw-bold, .p-4, .my-4;
+}
+
+.Login__Button{
+    @extend .col-12, .d-flex, .justify-content-center, .pt-4, .mt-4;
+}
+
+.Login__Button .Login__Button--Login{
+    @extend .btn, .w-100, .border, .fw-bold, .text-white, .shadow;
+    background-color: rgb(58, 151, 229);
+}
+
+.Login__Button .Login__Button--Login:hover {
+    background-color: darken(rgb(58, 151, 229), 10%); 
+    transition: background-color 0.3s ease;
+}
+
+.Login__Recover{
+    @extend .col-12, .text-center;
+}
+
+.Login__Recover .Login__Recover--Text {
+    @extend .btn, .btn-link, .text-primary;
+}
