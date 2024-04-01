@@ -1,7 +1,7 @@
 @import "./../../../../../../styles.scss";
 
 .Card{
-    @extend .card, .bg-transparent, .border, .border-0, .shadow-lg;
+    @extend .card, .bg-transparent, .border, .border-0, .shadow;
 }
 
 .Card .Card__Content{
@@ -9,7 +9,11 @@
 }
 
 .Card .Card__Content .Card__Content--Left{
-    @extend .col-12, .col-md-5, .bg-danger, .d-flex, .justify-content-center, .align-items-center, .rounded-start;
+    @extend .col-12, .col-md-5, .d-flex, .justify-content-center, .align-items-center, .rounded-start;
+    background-image: url("./../../../../../../assets/Login/Login01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .Card .Card__Content .Card__Content--Right{
